@@ -1,0 +1,174 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model X.PagedList.IPagedList<Company>
+
+
+@{
+	ViewData["Title"] = "List Of Companies";
+	Layout = "_Layout";
+}
+
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+</head>
+
+<style>
+	#box {
+		max-width: 300px;
+		position: relative;
+		margin: auto;
+		margin-top: 40px;
+	}
+
+		#box .fa-search {
+			position: absolute;
+			top: 14px;
+			left: 12px;
+			font-size: 20px;
+			color: cornflowerblue;
+		}
+
+	#search {
+		width: 129px;
+		box-sizing: border-box;
+		border: 2px solid cornflowerblue;
+		border-radius: 4px;
+		font-size: 18px;
+		padding: 12px 20px 12px 40px;
+		-moz-transition: width 0.4s ease-in-out;
+		-o-transition: width 0.4s ease-in-out;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+	}
+
+		#search:focus {
+			width: 100%;
+		}
+</style>
+
+
+
+<div class="container py-9">
+	<div class="row text-center text-white">
+		<div class="col-lg-8 mx-auto">
+			<h1 class="display-4">All Companies</h1>
+		</div>
+	</div>
+</div>
+
+
+<div class="d-flex flex-row justify-content-start">
+	<form id="search-form" class="m-3">
+		<div id="box">
+			<input type="text" id="search" placeholder="Search..">
+			<i class="fa fa-search"></i>
+		</div>
+	</form>
+</div>
+
+<div class="mt-2">
+	<div class="section__content">
+		<div class="container-fluid">
+			<div class="row" id="companies-list">
+				@{
+					@foreach (var item in Model)
+					{
+						<div class="col-md-3">
+							<div class="card">
+								<div class="card-header">
+									<i class="fa fa-user"></i>
+									<strong class="card-title pl-2">@item.Name @item.Title</strong>
+								</div>
+								<div class="card-body" style="height:450px">
+									<div class="d-block">
+										<img class="rounded-circle mx-auto d-block" src="~/images/companyimages/@item.Logo" alt="Card image cap" style="height:150px;width:150px">
+										<h5 class="text-sm-center mt-2 mb-1">@item.Name @item.Title</h5>
+										<div class="location text-sm-center">
+											<i class="fa fa-envelope"></i> @item.Email
+										</div>
+										<div class="location text-sm-center">
+											<i class="fa fa-phone"></i> @item.Phone
+										</div>
+										<div class="location text-sm-center">
+											<i class="fa fa-map-marker"></i> @item.Address
+										</div>
+										<br/>
+										<div class="location text-sm-center">
+											<i class="fa fa-user"></i>
+											@if (item.Status == 0)
+											{
+												<text> Active </text>
+											}
+											else
+											{
+												<text> Pasive </text>
+											}
+										</div>
+										
+									</div>
+								</div>
+								<hr>
+
+								<div class="card-text text-sm-center">
+									<a asp-action="DetailOfCompany" asp-controller="Admin" class="btn btn-outline-primary btn-sm mb-4" asp-route-id="@item.Id">Detail</a>
+								</div>
+							</div>
+						</div>
+					}
+				}
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item @(!Model.HasPreviousPage ? "disabled" : "")">
+							<a class="page-link" href="@Url.Action("ListOfCompanies", new { page = Model.PageNumber - 1 })">Previous</a>
+						</li>
+
+						@for (int i = 1; i <= Model.PageCount; i++)
+						{
+							<li class="page-item @(i == Model.PageNumber ? "active" : "")">
+								<a class="page-link" href="@Url.Action("ListOfCompanies", new { page = i })">@i</a>
+							</li>
+						}
+
+						<li class="page-item @(!Model.HasNextPage ? "disabled" : "")">
+							<a class="page-link" href="@Url.Action("ListOfCompanies", new { page = Model.PageNumber + 1 })">Next</a>
+						</li>
+					</ul>
+				</nav>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+
+
+@section Scripts {
+	<script>
+
+		var timeout = null;
+		var $companiesList = $("#companies-list");
+
+		$("#search").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+
+			clearTimeout(timeout);
+			timeout = setTimeout(function () {
+				$.ajax({
+					type: "GET",
+					url: "/Admin/Admin/SearchCompanies",
+					data: { "search": value },
+					success: function (result) {
+						$companiesList.html($(result).find("#companies-list").html());
+					},
+					error: function (error) {
+						console.log(error);
+					}
+				});
+			}, 200);
+		});
+
+	</script>
+}

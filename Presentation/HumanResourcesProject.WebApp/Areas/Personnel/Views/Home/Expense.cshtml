@@ -1,0 +1,230 @@
+﻿@using HumanResourcesProject.Domain.Enums;
+@model HumanResourcesProject.Domain.Entities.Expense
+@{
+    ViewData["Title"] = "Expense";
+    Layout = "_Layout";
+}
+
+@*<style>
+    #tabs {
+        float: left;
+        width: 100%;
+        font-size: 93%;
+        line-height: normal;
+        border-bottom: 1px solid #DD740B;
+    }
+
+        #tabs ul {
+            margin: 0;
+            padding: 10px 10px 0 50px;
+            list-style: none;
+        }
+
+        #tabs li {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+
+        #tabs button {
+            float: left;
+            background: url("/images/tableft.gif") no-repeat left top;
+            margin: 0;
+            padding: 0 0 0 5px;
+            text-decoration: none;
+        }
+
+            #tabs button span {
+                float: left;
+                display: block;
+                background: url("/images/tabright.gif") no-repeat right top;
+                padding: 5px 15px 4px 6px;
+                color: #FFF;
+            }
+
+            /* Commented Backslash Hack hides rule from IE5-Mac \*/
+            #tabs button span {
+                float: none;
+            }
+
+            /* End IE5-Mac hack */
+            #tabs button:hover span {
+                color: #FFF;
+            }
+
+            #tabs button:hover {
+                background-position: 0% -42px;
+            }
+
+                #tabs button:hover span {
+                    background-position: 100% -42px;
+                }
+</style>
+
+<div id="tabs">
+    <ul>
+        <li><button value="@ExpenseType.Travel"><span>Travel</span> </button></li>
+        <li><button value="@ExpenseType.Accomodation"><span>Accomodation</span></button></li>
+        <li><button value="@ExpenseType.FoodAndDrink"><span>Food And Drink</span></button></li>
+    </ul>
+</div>
+
+     *@
+
+
+@*<h1 class="mt-4">Expense Claims</h1>
+
+      
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Expense">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+
+            <div class="form-group">
+                <label asp-for="AmountOfExpense" class="control-label"></label>
+                <input asp-for="AmountOfExpense" class="form-control" id="result" />
+                <span asp-validation-for="AmountOfExpense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Explanation" class="control-label"></label>
+                <input asp-for="Explanation" class="form-control" />
+                <span asp-validation-for="Explanation" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Currency" class="control-label"></label>
+                <select asp-for="Currency" class="form-control" asp-items="@ViewBag.ExpenseCurrency"></select>
+                <span asp-validation-for="Currency" class="text-danger"></span>
+            </div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenseType" class="control-label"></label>
+                    <select asp-for="ExpenseType" class="form-control" asp-items="@ViewBag.ExpenseType"></select>
+                    <span asp-validation-for="ExpenseType" class="text-danger"></span>
+                </div>
+
+            <div class="form-group">
+                <input asp-for="AdvanceStatus" value="@AdvanceStatus.Pending" hidden />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    function sumNumbers() {
+        var number1 = parseInt(document.getElementById("number1").value); // ilk inputtan sayıyı alır
+        var number2 = parseInt(document.getElementById("number2").value); // ikinci inputtan sayıyı alır
+        var number3 = parseInt(document.getElementById("number3").value); // üçüncü inputtan sayıyı alır
+        var sum = number1 + number2 + number3; // toplama işlemi yapar
+        document.getElementById("result").value = sum; // sonucu diğer bir input alanına yazdırır
+    }
+</script>*@
+
+
+
+
+<div class="col-lg-6 my-4">
+    <div class="card">
+        <div class="card-header">
+            <strong>Expense </strong> Claims
+        </div>
+        <div class="card-body card-block">
+            <form asp-action="Expense" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label asp-for="AmountOfExpense" class=" form-control-label">Amount Of Expense</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input asp-for="AmountOfExpense" id="text-input" placeholder="Amount" class="form-control">
+                        <span asp-validation-for="AmountOfExpense" class="text-danger"></span>
+                       @* <small class="form-text text-muted">This is a help text</small>*@
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    
+                    <div class="col-12 col-md-9">
+                        <input asp-for="AdvanceStatus" value="@AdvanceStatus.Pending" hidden />
+                       
+                    </div>
+                </div>
+                
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label asp-for="Explanation" class=" form-control-label">Explanation</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea asp-for="Explanation" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
+                        <span asp-validation-for="Explanation" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label asp-for="DateOfExpense" class=" form-control-label">Date Of Expense</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input asp-for="DateOfExpense" type="date" placeholder="type=" date"" class="form-control">
+                        <span asp-validation-for="DateOfExpense" class="text-danger"></span>
+                        
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label asp-for="Currency" class=" form-control-label">Currency</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="Currency" asp-items="@ViewBag.ExpenseCurrency" name="select" id="select" class="form-control"></select>
+                        <span asp-validation-for="Currency" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label asp-for="ExpenseType" class=" form-control-label">Expense Type</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select asp-for="ExpenseType" asp-items="@ViewBag.ExpenseType" id="select" class="form-control"></select>
+                        <span asp-validation-for="ExpenseType" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="file-multiple-input" class=" form-control-label">Multiple File input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="file" id="file-multiple-input" name="fileMultipleInput" multiple="" class="form-control-file" accept="image/*,.pdf">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" value="Create" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Create
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="ListOfExpense" asp-controller="Home" class="btn btn-info">Back to List of Expense</a>
+    </div>
+</div>
+

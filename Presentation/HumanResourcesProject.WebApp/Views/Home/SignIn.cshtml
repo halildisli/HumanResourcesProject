@@ -1,0 +1,111 @@
+﻿@model SignInDto
+@{
+    Layout = "_LayoutSignIn";
+    ViewData["Title"] = "Welcome to Techopyre";
+}
+@{
+    if (TempData["SuccessMessage"]!=null)
+    {
+        <div>
+            <h2 class="alert-success">@TempData["SuccessMessage"]</h2>
+        </div>
+    }
+}
+<div class="container">
+    <div class="panda">
+        <div class="ear"></div>
+        <div class="face">
+            <div class="eye-shade"></div>
+            <div class="eye-white">
+                <div class="eye-ball"></div>
+            </div>
+            <div class="eye-shade rgt"></div>
+            <div class="eye-white rgt">
+                <div class="eye-ball"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="body"> </div>
+        <div class="foot">
+            <div class="finger"></div>
+        </div>
+        <div class="foot rgt">
+            <div class="finger"></div>
+        </div>
+    </div>
+    <div>
+        <form asp-action="SignIn" asp-controller="Home">
+            <div class="hand"></div>
+            <div class="hand rgt"></div>
+            <h1>Technopyre Software</h1>
+            <h1>Sign In</h1>
+            <div class="form-group">
+                <input required="required" class="form-control" asp-for="UserNameOrEmail" />
+                <label class="form-label">Username    </label>
+            </div>
+            <div class="form-group">
+                <input id="password" type="password" required="required" class="form-control" asp-for="Password" />
+                <label class="form-label">Password</label>
+                <div asp-validation-summary="All" class="alert mx-4">
+                </div>
+                <input class="btn" type="submit" value="Sign In">
+            </div>
+            <div class="form-group">
+                <button id="showPasswordButton" type="button" >Show/Hide </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div asp-validation-summary="All" class="text-white">
+</div>
+
+
+<script>
+    const showPasswordButton = document.querySelector("#showPasswordButton");
+    const passwordInput = document.querySelector("#password");
+
+    showPasswordButton.addEventListener("click", () => {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    });
+</script>
+
+@section Scripts{
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script id="rendered-js">
+        $('#password').focusin(function () {
+            $('form').addClass('up');
+        });
+        $('#password').focusout(function () {
+            $('form').removeClass('up');
+        });
+
+        // Panda Eye move
+        $(document).on("mousemove", function (event) {
+            var dw = $(document).width() / 15;
+            var dh = $(document).height() / 15;
+            var x = event.pageX / dw;
+            var y = event.pageY / dh;
+            $('.eye-ball').css({
+                width: x,
+                height: y
+            });
+
+        });
+
+        // validation
+
+        //$('.btn').click(function () {
+        //    $('form').addClass('wrong-entry');
+        //    setTimeout(function () {
+        //        $('form').removeClass('wrong-entry');
+        //    }, 3000);
+        //});
+
+    </script>
+}
+

@@ -1,0 +1,99 @@
+﻿@model EditPersonDto
+
+@{
+
+	ViewData["Title"] = "Edit";
+
+}
+
+
+<form enctype="multipart/form-data" id="form" method="post" asp-action="Edit">
+
+	<input asp-for="@Model.Id" type="hidden" />
+
+	<div class="col-lg-10">
+
+		<div class="card">
+
+			<div class="card-header">
+
+				<strong>Edit</strong>
+
+				<small>Profile</small>
+
+			</div>
+
+			<div class="card-body card-block">
+
+				<div class="row text-center text-nowrap">
+					<div class="col-8 col-sm-auto mb-3">
+						<div class="mx-auto mb-3" style="width: 140px;">
+							<div>
+								<img class="d-flex justify-content-center align-items-center rounded-2" style="height: 140px; width: 140px;" id="imageResult" src="~/images/adminimages/@Model.ImagePath">
+								<span asp-validation-for="@Model.ImagePath" class="text-danger"></span>
+							</div>
+						</div>
+						@*<div class="input-group mb-3 px-2 py-2 bg-white shadow-sm col-lg-10">
+						<label asp-for=@Model.ImagePath id="photo" class="font-weight-light text-muted mx-4">Choose file</label>
+						<input class="form-control d-block mx-4" asp-for="@Model.ImagePath">
+						<span asp-validation-for="@Model.ImagePath" class="text-danger"></span>
+						</div>*@
+						<div class="input-group mb-3 px-2 py-2 bg-white shadow-sm col-lg-10">
+							<label for="ImagePath" id="photo" class="font-weight-light text-muted mx-4">Choose file</label>
+							<input class="form-control d-block mx-4" type="file" name="photo" id="photo" for="ImagePath">
+
+						</div>
+					</div>
+
+					<div class="col-1 text-center text-sm-left mb-2 mb-sm-0 d-flex flex-column justify-content-center align-items-center ">
+						<h3 class="pt-sm-2 pb-1 mb-0 text-nowrap">@ViewBag.PersonName</h3>
+						<h1 class="rounded-pill">@ViewBag.Job</h1>
+						<strong>@ViewBag.Department</strong>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="form-group m-2">
+
+				<label for="adress" class=" form-control-label">Adress</label>
+				<textarea class="form-control border" rows="3" type="tel" id="Address" asp-for="Address"></textarea>
+				<span asp-validation-for="@Model.Address" class="text-danger"></span>
+			</div>
+
+			<div class="form-group m-2">
+
+				<label asp-for="@Model.PhoneNumber" class=" form-control-label">Phone</label>
+				<input asp-for=@Model.PhoneNumber class="form-control border" rows="1" type="tel" oninput="formatPhoneNumber(this);">
+				<span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+				@*                    <input class="form-control border phoneInputHidden" rows="1" type="hidden" id="phoneInputHidden" asp-for="PhoneNumber" oninput="formatPhoneNumber(this);">*@
+
+			</div>
+
+			<div class="row m-4">
+				<div class="col d-flex justify-content-center">
+
+					<input class="btn btn-success " type="submit" id="Submit" value="Save Changes">
+
+				</div>
+			</div>
+			<div class="row m-4">
+				<div class="col d-flex justify-content-center">
+					<a asp-action="HomePage" asp-controller="Admin" class="btn btn-warning">Back To Home Page</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>
+
+</form>
+
+
+
+
+
+

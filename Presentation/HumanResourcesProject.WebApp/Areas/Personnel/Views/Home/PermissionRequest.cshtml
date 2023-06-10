@@ -1,0 +1,64 @@
+﻿@model HumanResourcesProject.Domain.Entities.Permission
+
+@{
+	ViewData["Title"] = "PermissionRequest";
+	Layout = "_Layout";
+}
+
+
+<div class="col-lg-6 my-2">
+
+	<div class="card">
+
+		<div class="card-header">
+			<strong>Permission Request </strong>
+		</div>
+
+
+		<div class="row card-body card-block">
+			<div class="col-md-10">
+				<form asp-action="PermissionRequest">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+					<div class="form-group">
+						<label asp-for="PermissionType" class="control-label"></label>
+						<select asp-for="PermissionType" class="form-control" asp-items="@ViewBag.PermissionType"></select>
+						<span asp-validation-for="PermissionType" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<label asp-for="StartOfPermissionDate" class="control-label"></label>
+						<input asp-for="StartOfPermissionDate" class="form-control" type="date" />
+						<span asp-validation-for="StartOfPermissionDate" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<label asp-for="EndOfPermissionDate" class="control-label"></label>
+						<input asp-for="EndOfPermissionDate" class="form-control" type="date" />
+						<span asp-validation-for="EndOfPermissionDate" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+
+						<input asp-for="EmployeeId" value="@ViewBag.Employee" class="form-control" type="hidden" />
+						<span asp-validation-for="EmployeeId" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+
+						<input asp-for="PersonId" value="@ViewBag.Person" class="form-control" type="hidden" />
+						<span asp-validation-for="PersonId" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Create" class="btn btn-primary" />
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<div>
+		<a asp-action="ListOfPermission" asp-controller="Home">Back to List of Permission</a>
+	</div>
+
+</div>
+

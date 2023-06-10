@@ -1,0 +1,169 @@
+﻿@using HumanResourcesProject.Domain.Enums;
+@model List<ListOfExpenseDto>
+@{
+    ViewData["Title"] = "ListOfExpense";
+    Layout = "_Layout";
+}
+
+
+
+<div class="container">
+    <h1 class="my-2">List Of Expense</h1>
+    <div class="bd-example">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-pending" aria-selected="false">
+                    @{
+                        int numberPending = 0;
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Pending)
+                            {
+                                numberPending++;
+                            }
+                        }
+                        <text>Pending ( @numberPending )</text>
+                    }
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link " id="pills-approved-tab" data-bs-toggle="pill" data-bs-target="#pills-approved" type="button" role="tab" aria-controls="pills-approved" aria-selected="true">
+                    @{
+                        int numberApproved = 0;
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Approved)
+                            {
+                                numberApproved++;
+                            }
+                        }
+                        <text>Approved ( @numberApproved )</text>
+                    }
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-denied-tab" data-bs-toggle="pill" data-bs-target="#pills-denied" type="button" role="tab" aria-controls="pills-denied" aria-selected="false">
+                    @{
+                        int numberDenied = 0;
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Denied)
+                            {
+                                numberDenied++;
+                            }
+                        }
+                        <text>Denied ( @numberDenied )</text>
+                    }
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+                @{
+                    if (numberPending > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Pending)
+                            {
+                                <div class="card">
+                                    <div class="card-header">
+                                        Pending - @Enum.GetName(item.ExpenseType)
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+                                        <p class="card-text mt-2">@item.Explanation</p>
+                                        <p class="card-text btn btn-info rounded-pill mt-2">@(item.AmountOfExpense + " " + Enum.GetName(item.Currency))</p>
+                                        <p class="card-text mt-2 font-italic">@(Convert.ToInt32((DateTime.Today - item.DateOfExpense).TotalDays + 1).ToString()) days ago requested</p>
+                                        <a asp-action="DetailOfExpense" asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-primary mr-2 mt-2">Detail of Expense</a>
+                                        <a asp-action="ApproveExpense" asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-success mr-2 mt-2">Approve Expense</a>
+                                        <a asp-action="DenyExpense" asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-danger mr-2 mt-2">Deny Expense</a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="card">
+                            <div>
+                                No pending spending requests.
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
+            <div class="tab-pane fade " id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
+                @{
+                    if (numberApproved > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Approved)
+                            {
+                                <div class="card">
+                                    <div class="card-header">
+                                        Approved - @Enum.GetName(item.ExpenseType)
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+                                        <p class="card-text mt-2">@item.Explanation</p>
+                                        <p class="card-text btn btn-info rounded-pill mt-2">@(item.AmountOfExpense + " " + Enum.GetName(item.Currency))</p>
+                                        <p class="card-text mt-2 font-italic">@(Convert.ToInt32((DateTime.Today - item.DateOfExpense).TotalDays + 1).ToString()) days ago requested - @(Convert.ToInt32((DateTime.Today - (DateTime)item.DateOfResponse).TotalDays + 1).ToString()) days ago approved</p>
+                                        <a asp-action="DetailOfExpense" asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-primary">Detail of Expense</a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="card">
+                            <div>
+                                There is no approved expenditure request.
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
+            <div class="tab-pane fade" id="pills-denied" role="tabpanel" aria-labelledby="pills-denied-tab">
+                @{
+                    if (numberDenied > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            if (item.AdvanceStatus == AdvanceStatus.Denied)
+                            {
+                                <div class="card">
+                                    <div class="card-header">
+                                        Denied - @Enum.GetName(item.ExpenseType)
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+                                        <p class="card-text mt-2">@item.Explanation</p>
+                                        <p class="card-text btn btn-info rounded-pill mt-2">@(item.AmountOfExpense + " " + Enum.GetName(item.Currency))</p>
+                                        <p class="card-text mt-2 font-italic">@(Convert.ToInt32((DateTime.Today - item.DateOfExpense).TotalDays + 1).ToString()) days ago requested - @(Convert.ToInt32((DateTime.Today - (DateTime)item.DateOfResponse).TotalDays + 1).ToString()) days ago denied</p>
+                                        <a asp-action="DetailOfExpense" asp-controller="Employee" asp-route-id="@item.Id" class="btn btn-primary">Detail of Expense</a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="card">
+                            <div>
+                                There are no denied spending requests.
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

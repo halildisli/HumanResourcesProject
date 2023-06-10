@@ -1,0 +1,241 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HumanResourcesProject.WebApp
+build_property.RootNamespace = HumanResourcesProject.WebApp
+build_property.ProjectDir = C:\Users\halil\source\repos\HumanResourcesProject\Presentation\HumanResourcesProject.WebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\halil\source\repos\HumanResourcesProject\Presentation\HumanResourcesProject.WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/CreateCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQ3JlYXRlQ29tcGFueS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/CreateManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQ3JlYXRlTWFuYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/DetailOfCompany.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRGV0YWlsT2ZDb21wYW55LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSG9tZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/ListOfCompanies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cTGlzdE9mQ29tcGFuaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Admin/ListOfManagers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cTGlzdE9mTWFuYWdlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/CreateEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxDcmVhdGVFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/DetailOfAdvance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxEZXRhaWxPZkFkdmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/DetailOfExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxEZXRhaWxPZkV4cGVuc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/DetailOfPermission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxEZXRhaWxPZlBlcm1pc3Npb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/FileViewerNewTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxGaWxlVmlld2VyTmV3VGFiLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/ListOfAdvances.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxMaXN0T2ZBZHZhbmNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/ListOfEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxMaXN0T2ZFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/ListOfExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxMaXN0T2ZFeHBlbnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/ListOfPermission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxMaXN0T2ZQZXJtaXNzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Employee/UpdateEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xFbXBsb3llZVxVcGRhdGVFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXEhvbWVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXFByaXZhY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Home/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xIb21lXFNpZ25VcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Shared/_LayoutSignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xTaGFyZWRcX0xheW91dFNpZ25Jbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xTaGFyZWRcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/AdvanceRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcQWR2YW5jZVJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/Expense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcRXhwZW5zZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcSG9tZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/ListOfAdvances.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcTGlzdE9mQWR2YW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/ListOfExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcTGlzdE9mRXhwZW5zZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/ListOfPermission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcTGlzdE9mUGVybWlzc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/PermissionRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcUGVybWlzc2lvblJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Home/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXEhvbWVcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Shared/_LayoutSignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFNoYXJlZFxfTGF5b3V0U2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/Home/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/Shared/_LayoutSignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nrapyezhii
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Manager/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlclxWaWV3c1xTaGFyZWRcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-92it45cse6
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Areas/Personnel/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGVyc29ubmVsXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-kvcrl4kpas
+
+[C:/Users/halil/source/repos/HumanResourcesProject/Presentation/HumanResourcesProject.WebApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pkq60ze9c7

@@ -1,0 +1,63 @@
+﻿@using HumanResourcesProject.Domain.Enums;
+@model HumanResourcesProject.Domain.Entities.Advance
+
+@{
+	ViewData["Title"] = "AdvanceRequest";
+	Layout = "_Layout";
+}
+
+
+
+
+<div class="col-lg-6 my-2">
+
+	<div class="card">
+
+		<div class="card-header">
+			<strong>Advance Request </strong>
+		</div>
+
+		<div class="row card-body card-block ">
+			<div class="col-md-10">
+				<form asp-action="AdvanceRequest">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="form-group ">
+						<label asp-for="AmountOfDemand" class="control-label"></label>
+						<input asp-for="AmountOfDemand" class="form-control" />
+						<span asp-validation-for="AmountOfDemand" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Explanation" class="control-label"></label>
+						@*<input asp-for="Explanation" class="form-control" />*@
+						<textarea asp-for="Explanation" id="textarea-input" rows="9" placeholder="Please write the reason for your advance request..." class="form-control"></textarea>
+						<span asp-validation-for="Explanation" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="AdvanceType" class="control-label"></label>
+						<select asp-for="AdvanceType" class="form-control" asp-items="@ViewBag.AdvanceType"></select>
+						<span asp-validation-for="AdvanceType" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Currency" class="control-label"></label>
+						<select asp-for="Currency" class="form-control" asp-items="@ViewBag.AdvanceCurrency"></select>
+						<span asp-validation-for="Currency" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<input asp-for="AdvanceStatus" value="@AdvanceStatus.Pending" hidden />
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Create" class="btn btn-primary" />
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<div>
+		<a asp-action="ListOfAdvances" asp-controller="Home" class="btn btn-info">Back to List of Advances</a>
+	</div>
+
+</div>
+
+

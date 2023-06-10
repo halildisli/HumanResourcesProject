@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="jQuery.Validation" Version="1.19.5" />
+    <PackageReference Include="jQuery.Validation.Unobtrusive" Version="2.0.20710" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\HumanResourcesProject.Application\HumanResourcesProject.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\HumanResourcesProject.Persistance\HumanResourcesProject.Persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Personnel\Data\" />
+    <Folder Include="Areas\Personnel\Models\" />
+    <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Manager\Models\" />
+    <Folder Include="wwwroot\files\expensefiles\" />
+  </ItemGroup>
+
+</Project>

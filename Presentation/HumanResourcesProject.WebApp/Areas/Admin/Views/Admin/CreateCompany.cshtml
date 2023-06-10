@@ -1,0 +1,363 @@
+﻿@using HumanResourcesProject.Application.DTOs;
+@using HumanResourcesProject.Domain.Enums;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateCompanyDto
+
+
+
+@{
+
+    ViewData["Title"] = "Create Company";
+
+    Layout = "_Layout";
+
+}
+<style>
+    html {
+        font-size: 14px;
+    }
+
+    @@media (min-width: 768px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        margin-bottom: 60px;
+    }
+
+
+
+    @@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 20px;
+        background: rgb(130, 106, 251);
+    }
+
+    .container {
+        position: relative;
+        width: 1600px;
+        width: 100%;
+        background: #fff;
+        padding-left: 35px;
+        padding-right: 105px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-left: 50px;
+    }
+
+        .container header {
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .container .form {
+            margin-top: 30px;
+        }
+
+    .form .input-box {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .input-box label {
+        color: #333;
+    }
+
+    .form :where(.input-box input, .select-box) {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        color: #707070;
+        margin-top: 8px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding:  0 15px;
+    }
+
+    .input-box input:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .form .column {
+        display: flex;
+        column-gap: 15px;
+    }
+
+    .form .gender-box {
+        margin-top: 20px;
+    }
+
+    .gender-box h3 {
+        color: #333;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    .form :where(.gender-option,.gender) {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .form .gender {
+        column-gap: 5px;
+    }
+
+    .gender input {
+        accent-color: rgb(130, 106, 251);
+    }
+
+    .form :where(.gender input, .gender label) {
+        cursor: pointer;
+    }
+
+    .gender label {
+        color: #707070;
+    }
+
+    .address :where(input, .select-box) {
+        margin-top: 15px;
+    }
+
+    .select-box select {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #707070;
+        font-size: 1rem;
+    }
+
+    .form button {
+        height: 55px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: rgb(130, 106, 251);
+    }
+
+        .form button:hover {
+            background: rgb(88, 56, 250);
+        }
+
+    @@media screen and (max-width: 500px) {
+        .form .column {
+            flex-wrap: wrap;
+        }
+
+        .form :where(.gender-option, .gender) {
+            row-gap: 15px;
+        }
+    }
+
+</style>
+
+
+
+<div style="text-align:center;">
+
+    <h1>Create Company</h1>
+
+    <hr />
+</div>
+
+<section class="container">
+    <form asp-action="CreateCompany" class="form" method="post" enctype="multipart/form-data">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="input-box">
+            <div class="column">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="pt-4" for="Logo" id="photo">Add Logo</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="pt-2" type="file" name="photo" id="photo" for="Logo">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-box">
+            <label>Company Name and Title</label>
+
+            <div class="column">
+
+                <input asp-for="Name" type="text" placeholder="Enter Company Name" />
+
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+                <input asp-for="Title" type="text" placeholder="Enter Company Title" />
+
+                <span asp-validation-for="Title" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="input-box">
+
+
+
+            <label>Mersis No and Tax No</label>
+
+            <div class="column">
+
+                <input asp-for="MersisNo" type="text" placeholder="Enter Mersis No" />
+
+                <span asp-validation-for="MersisNo" class="text-danger"></span>
+
+                <input asp-for="TaxNo" type="text" placeholder="Enter Tax No" />
+
+                <span asp-validation-for="TaxNo" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <div class="input-box">
+
+                <label>Company Phone</label>
+
+                <input asp-for="Phone" type="number" placeholder="Enter phone number" />
+
+                <span asp-validation-for="Phone" class="text-danger"></span>
+
+            </div>
+
+            <div class="input-box">
+
+                <label asp-for="TaxAdministration">Tax Administration</label>
+
+                <input asp-for="TaxAdministration" type="text" placeholder="Enter tax administration" />
+
+                <span asp-validation-for="TaxAdministration" class="text-danger"></span>
+
+            </div>
+
+        </div>
+        <div class="input-box address">
+
+            <label>Company Address</label>
+
+            <input asp-for="Address" type="text" placeholder="Enter street address" />
+
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+        </div>
+        <div class="column">
+
+            <div class="input-box">
+
+                <label>Company Founded Date</label>
+
+                <input asp-for="FoundedDate" type="date" placeholder="Enter company founded date" />
+
+                <span asp-validation-for="FoundedDate" class="text-danger"></span>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Company Email</label>
+
+                <input asp-for="Email" type="text" placeholder="Enter company email" />
+
+                <span asp-validation-for="Email" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+
+        <div class="column">
+
+            <div class="input-box">
+
+                <label>Contract Starting Date</label>
+
+                <input asp-for="ContractStartDate" type="date" placeholder="Enter Contract Starting Date" />
+
+                <span asp-validation-for="ContractStartDate" class="text-danger"></span>
+
+            </div>
+            <div class="input-box">
+
+                <label>Contract Ending Date</label>
+
+                <input asp-for="ContractEndDate" type="date" placeholder="Enter Contract Ending Date" />
+
+                <span asp-validation-for="ContractEndDate" class="text-danger"></span>
+
+            </div>
+
+
+
+        </div>
+        @*<div class="input-box">
+            <div class="column">
+
+                <div class="select-box">
+
+                    <select asp-for="Status" class="form-control">
+                        <option hidden>Choose Status</option>
+                        <option value=@Status.Active>Active</option>
+                        <option value=@Status.Passive>Passive</option>
+                    </select>
+
+                </div>
+            </div>
+
+        </div>*@
+        <div>
+            <input asp-for="Status" value="@Status.Passive" hidden/>
+        </div>
+        <button>Create Company</button>
+        <div class="my-3">
+            <a asp-action="HomePage" asp-controller="Admin" class="btn btn-warning">Back To Home Page</a>
+        </div>
+    </form>
+
+</section>
+
+
+
+
+
+
+
+
+

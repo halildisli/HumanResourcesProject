@@ -1,0 +1,307 @@
+﻿@using HumanResourcesProject.Domain.Enums;
+@model List<Permission>
+
+@{
+	ViewData["Title"] = "ListOfPermission";
+	Layout = "_Layout";
+}
+
+
+
+<div class="container">
+	<h1 class="my-2">List Of Permission</h1>
+	<div class="bd-example">
+		<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-pending" aria-selected="false">
+
+					@{
+						int numberAnnual = 0;
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.AnnualLeave)
+							{
+								numberAnnual++;
+							}
+						}
+						<text>Annual Leave ( @numberAnnual )</text>
+					}
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link " id="pills-approved-tab" data-bs-toggle="pill" data-bs-target="#pills-approved" type="button" role="tab" aria-controls="pills-approved" aria-selected="true">
+					@{
+						int numberMaternity = 0;
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.MaternityLeave)
+							{
+								numberMaternity++;
+							}
+						}
+						<text>Maternity Leave ( @numberMaternity )</text>
+					}
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="pills-denied-tab" data-bs-toggle="pill" data-bs-target="#pills-denied" type="button" role="tab" aria-controls="pills-denied" aria-selected="false">
+					@{
+						int numberPaternity = 0;
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.PaternityLeave)
+							{
+								numberPaternity++;
+							}
+						}
+						<text>Paternity Leave  ( @numberPaternity )</text>
+					}
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="pills-marriage-tab" data-bs-toggle="pill" data-bs-target="#pills-marriage" type="button" role="tab" aria-controls="pills-marriage" aria-selected="false">
+					@{
+						int numberMarriage = 0;
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.MarriageLeave)
+							{
+								numberMarriage++;
+							}
+						}
+						<text>Marriage Leave  ( @numberMarriage )</text>
+					}
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="pills-unpaid-tab" data-bs-toggle="pill" data-bs-target="#pills-unpaid" type="button" role="tab" aria-controls="pills-unpaid" aria-selected="false">
+					@{
+						int numberUnpaid = 0;
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.UnpaidLeave)
+							{
+								numberUnpaid++;
+							}
+						}
+						<text>Unpaid Leave  ( @numberUnpaid )</text>
+					}
+				</button>
+			</li>
+		</ul>
+
+
+
+		<div class="tab-content" id="pills-tabContent">
+			<div class="tab-pane fade show active" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+				@{
+					if (numberAnnual > 0)
+					{
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.AnnualLeave)
+							{
+								<div class="card ">
+									<div class="card-header">
+										@Enum.GetName(item.PermissionType)
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+										<p class="card-text mt-2">@item.PermissionType</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.StartOfPermissionDate?.ToShortDateString()</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.EndOfPermissionDate?.ToShortDateString()</p>
+		
+										<h5 class="card-title" style="padding:10px;color:red; ">Permission Status : @item.ApprovalState</h5>
+										<div style="background-color: #fff; padding: 10px;">
+											<p class="card-text mt-2 font-italic" style="color: blue;">
+												@(Convert.ToInt32((DateTime.Today - item.RequestDate.Value).TotalDays + 1).ToString()) days ago requested
+											</p>
+										</div>
+
+
+									</div>
+								</div>
+							}
+						}
+					}
+					else
+					{
+						<div class="card">
+							<div>
+								There is no Annual Leave request.
+							</div>
+						</div>
+					}
+
+				}
+			</div>
+
+
+
+
+			<div class="tab-pane fade " id="pills-approved" role="tabpanel" aria-labelledby="pills-approved-tab">
+				@{
+					if (numberMaternity > 0)
+					{
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.MaternityLeave)
+							{
+								<div class="card">
+									<div class="card-header">
+										Approved - @Enum.GetName(item.PermissionType)
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+										<p class="card-text mt-2">@item.PermissionType</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.StartOfPermissionDate?.ToShortDateString()</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.EndOfPermissionDate?.ToShortDateString()</p>
+										<h5 class="card-title" style="padding:10px;color:red; ">Permission Status : @item.ApprovalState</h5>
+										<div style="background-color: #fff; padding: 10px;">
+											<p class="card-text mt-2 font-italic" style="color: blue;">
+												@(Convert.ToInt32((DateTime.Today - item.RequestDate.Value).TotalDays + 1).ToString()) days ago requested
+											</p>
+										</div>
+
+									</div>
+								</div>
+							}
+						}
+					}
+					else
+					{
+						<div class="card">
+							<div>
+								There is no Maternity permission request.
+							</div>
+						</div>
+					}
+
+				}
+			</div>
+
+			<div class="tab-pane fade" id="pills-denied" role="tabpanel" aria-labelledby="pills-denied-tab">
+				@{
+					if (numberPaternity > 0)
+					{
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.PaternityLeave)
+							{
+								<div class="card">
+									<div class="card-header">
+										Approved - @Enum.GetName(item.PermissionType)
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+										<p class="card-text mt-2">@item.PermissionType</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.StartOfPermissionDate?.ToShortDateString()</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.EndOfPermissionDate?.ToShortDateString()</p>
+										<h5 class="card-title" style="padding:10px;color:red; ">Permission Status : @item.ApprovalState</h5>
+										<div style="background-color: #fff; padding: 10px;">
+											<p class="card-text mt-2 font-italic" style="color: blue;">
+												@(Convert.ToInt32((DateTime.Today - item.RequestDate.Value).TotalDays + 1).ToString()) days ago requested
+											</p>
+										</div>
+									</div>
+								</div>
+							}
+						}
+					}
+					else
+					{
+						<div class="card">
+							<div>
+								There is no paternity permission request.
+							</div>
+						</div>
+					}
+
+				}
+			</div>
+
+			<div class="tab-pane fade " id="pills-marriage" role="tabpanel" aria-labelledby="pills-marriage-tab">
+				@{
+					if (numberMarriage > 0)
+					{
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.MarriageLeave)
+							{
+								<div class="card">
+									<div class="card-header">
+										Approved - @Enum.GetName(item.PermissionType)
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+										<p class="card-text mt-2">@item.PermissionType</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.StartOfPermissionDate?.ToShortDateString()</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.EndOfPermissionDate?.ToShortDateString()</p>
+										<h5 class="card-title" style="padding:10px;color:red; ">Permission Status : @item.ApprovalState</h5>
+										<div style="background-color: #fff; padding: 10px;">
+											<p class="card-text mt-2 font-italic" style="color: blue;">
+												@(Convert.ToInt32((DateTime.Today - item.RequestDate.Value).TotalDays + 1).ToString()) days ago requested
+											</p>
+										</div>
+
+									</div>
+								</div>
+							}
+						}
+					}
+					else
+					{
+						<div class="card">
+							<div>
+								There is no marriage permission request.
+							</div>
+						</div>
+					}
+
+				}
+			</div>
+
+			<div class="tab-pane fade " id="pills-unpaid" role="tabpanel" aria-labelledby="pills-unpaid-tab">
+				@{
+					if (numberMaternity > 0)
+					{
+						foreach (var item in Model)
+						{
+							if (item.PermissionType == PermissionType.UnpaidLeave)
+							{
+								<div class="card">
+									<div class="card-header">
+										Approved - @Enum.GetName(item.PermissionType)
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">@item.Employee.FirstName @item.Employee.SecondName @item.Employee.Surname @item.Employee.SecondSurname</h5>
+										<p class="card-text mt-2">@item.PermissionType</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.StartOfPermissionDate?.ToShortDateString()</p>
+										<p class="card-text mt-2 font-italic">Start Permission Date : @item.EndOfPermissionDate?.ToShortDateString()</p>
+										<h5 class="card-title" style="padding:10px;color:red; ">Permission Status : @item.ApprovalState</h5>
+										<div style="background-color: #fff; padding: 10px;">
+											<p class="card-text mt-2 font-italic" style="color: blue;">
+												@(Convert.ToInt32((DateTime.Today - item.RequestDate.Value).TotalDays + 1).ToString()) days ago requested
+											</p>
+										</div>
+
+									</div>
+								</div>
+							}
+						}
+					}
+					else
+					{
+						<div class="card">
+							<div>
+								There is no unpaid permission request.
+							</div>
+						</div>
+					}
+
+				}
+			</div>
+
+		</div>
+	</div>
+</div>

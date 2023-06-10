@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\HumanResourcesProject.WebApp.props" />
+</Project>

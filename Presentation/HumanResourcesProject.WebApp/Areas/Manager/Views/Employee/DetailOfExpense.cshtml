@@ -1,0 +1,161 @@
+﻿@using HumanResourcesProject.Domain.Enums;
+@model ListOfExpenseDto
+@{
+    ViewData["Title"] = "DetailOfExpense";
+    Layout = "_Layout";
+}
+
+<div class="col-lg-10">
+    <div class="card">
+        <div class="card-header">
+            <strong>Detail Of Expense</strong>
+            <small>  Information</small>
+        </div>
+        <div class="card-body card-block">
+
+            <div class="row">
+                <div class="col-12 col-sm-auto">
+                    <div class="mx-auto" style="width: 140px;">
+                        <div>
+                            <img class="d-flex justify-content-center align-items-center rounded " src="~/images/employeeimages/@Model.Employee.ImagePath" style="height: 140px; width: 140px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-column flex-sm-row justify-content-between">
+                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">@Model.Employee.FirstName @Model.Employee.SecondName @Model.Employee.Surname @Model.Employee.SecondSurname</h4>
+
+                        <div class="mt-2">
+                            <button class="btn btn-primary" type="button">
+                                <span>
+                                    @{
+                                        if (Model.AdvanceStatus == AdvanceStatus.Pending)
+                                        {
+                                            <text> Pending </text>
+                                        }
+                                        else if (Model.AdvanceStatus == AdvanceStatus.Canceled)
+                                        {
+                                            <text> Canceled </text>
+                                        }
+                                        else if (Model.AdvanceStatus == AdvanceStatus.Approved)
+                                        {
+                                            <text> Approved </text>
+                                        }
+                                        else
+                                        {
+                                            <text> Denied </text>
+                                        }
+                                    }
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+
+                <address class="mt-3">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Employee Name : </strong> </label>
+
+                                    <label value=""> @Model.Employee.FirstName @Model.Employee.SecondName @Model.Employee.Surname @Model.Employee.SecondSurname</label>
+                                </div>
+                            </div>
+                            <div class="col">
+
+                                <div class="form-group">
+                                    <label><strong>Amount of Expense : </strong></label>
+
+                                    <label value="amountOfExpense">@Model.AmountOfExpense @Enum.GetName(Model.Currency)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Expense Type : </strong></label>
+
+                                    <label value="expenseType">@Enum.GetName(Model.ExpenseType)</label>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Expense Status : </strong></label>
+
+                                    <label value="advanceStatus">@Enum.GetName(Model.AdvanceStatus)</label>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Date of Expense : </strong></label>
+
+                                    <label value="dateOfExpense">@Model.DateOfExpense.ToString("dd/MM/yyyy")</label>
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label><strong>Date of Response : </strong></label>
+                                    @{
+                                        if (Model.DateOfResponse != null)
+                                        {
+                                            DateTime date = (DateTime)Model.DateOfResponse;
+                                            <label value="dateOfResponse">@date.ToString("dd/MM/yyyy")</label>
+                                        }
+                                        else
+                                        {
+                                            <label value="dateOfResponse">There is no response.</label>
+                                        }
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <label><strong>Explanation : </strong></label>
+                            <label value="explanation"> @Model.Explanation </label>
+                        </div>
+                        <div class="row">
+                            @{
+                                if (Model.FilePath != null)
+                                {
+                                    <a asp-action="FileViewerNewTab" asp-controller="Employee" asp-route-fileName="@Model.FilePath" target="_blank">Show Uploaded Document</a>
+                                }
+                                else
+                                {
+                                    <i>No Uploded Document</i>
+                                }
+                            }
+                        </div>
+                    </div>
+                </address>
+
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-start mb-2 ml-4">
+            <div class="col-md-4">
+                <a asp-action="ApproveExpense" asp-controller="Employee" class="btn btn-success rounded" asp-route-id="@Model.Id">Approve Expense</a>
+            </div>
+            <div class="col-md-4">
+                <a asp-action="DenyExpense" asp-controller="Employee" class="btn btn-danger rounded" asp-route-id="@Model.Id">Deny Expense</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="col-md-4">
+            <a asp-action="ListOfExpense" asp-controller="Employee" class="btn btn-primary">Back To List of Expense</a>
+        </div>
+    </div>
+</div>
+

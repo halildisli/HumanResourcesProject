@@ -1,0 +1,392 @@
+﻿@model UpdateEmployeeDto
+
+
+
+@{
+
+    ViewData["Title"] = "UpdateEmployee";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<style>
+    html {
+        font-size: 14px;
+    }
+
+    @@media (min-width: 768px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        margin-bottom: 60px;
+    }
+
+
+
+    @@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 20px;
+        background: rgb(130, 106, 251);
+    }
+
+    .container {
+        position: relative;
+        width: 1600px;
+        width: 100%;
+        background: #fff;
+        padding-left: 35px;
+        padding-right: 105px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin-left: 50px;
+    }
+
+        .container header {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .container .form {
+            margin-top: 30px;
+        }
+
+    .form .input-box {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .input-box label {
+        color: #333;
+    }
+
+    .form :where(.input-box input, .select-box) {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        color: #707070;
+        margin-top: 8px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding:  0 15px;
+    }
+
+    .input-box input:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .form .column {
+        display: flex;
+        column-gap: 15px;
+    }
+
+    .form .gender-box {
+        margin-top: 20px;
+    }
+
+    .gender-box h3 {
+        color: #333;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    .form :where(.gender-option,.gender) {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .form .gender {
+        column-gap: 5px;
+    }
+
+    .gender input {
+        accent-color: rgb(130, 106, 251);
+    }
+
+    .form :where(.gender input, .gender label) {
+        cursor: pointer;
+    }
+
+    .gender label {
+        color: #707070;
+    }
+
+    .address :where(input, .select-box) {
+        margin-top: 15px;
+    }
+
+    .select-box select {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #707070;
+        font-size: 1rem;
+    }
+
+    .form button {
+        height: 55px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: rgb(130, 106, 251);
+    }
+
+        .form button:hover {
+            background: rgb(88, 56, 250);
+        }
+
+    @@media screen and (max-width: 500px) {
+        .form .column {
+            flex-wrap: wrap;
+        }
+
+        .form :where(.gender-option, .gender) {
+            row-gap: 15px;
+        }
+    }
+
+</style>
+
+
+
+
+<div style="text-align:center;">
+
+    <h1>Update Employee</h1>
+
+</div>
+<hr />
+
+<section class="container">
+    <form asp-action="UpdateEmployee" class="form" method="post" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="input-box">
+            <div class="column">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <div>
+                                <img class="d-flex justify-content-center align-items-center rounded " src="~/images/employeeimages/@Model.ImagePath" style="height: 140px; width: 140px;" />
+                                <span asp-validation-for="ImagePath"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-8">
+                        <input class="pt-2" type="file" name="photo" id="photo" for="ImagePath">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-box">
+
+
+
+            <label>Name</label>
+
+            <div class="column">
+
+                <input asp-for="FirstName" type="text" placeholder="Enter First Name" />
+
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+
+                <input asp-for="SecondName" type="text" placeholder="Enter Second Name" />
+
+                <span asp-validation-for="SecondName" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="input-box">
+
+
+
+            <label>Surname</label>
+
+            <div class="column">
+
+                <input asp-for="Surname" type="text" placeholder="Enter First Surname" />
+
+                <span asp-validation-for="Surname" class="text-danger"></span>
+
+                <input asp-for="SecondSurname" type="text" placeholder="Enter Second Surname" />
+
+                <span asp-validation-for="SecondSurname" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <div class="input-box">
+
+                <label asp-for="PhoneNumber" class="control-label"></label>
+
+                <input asp-for="PhoneNumber" type="number" placeholder="Enter phone number" />
+
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            </div>
+
+            <div class="input-box">
+
+                <label asp-for="BirthDate" class="control-label"></label>
+
+                <input asp-for="BirthDate" type="date" placeholder="Enter birth date" />
+
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <div class="input-box">
+
+                <label asp-for="IdentityNumber" class="control-label"></label>
+
+                <input asp-for="IdentityNumber" type="number" placeholder="Enter Identity Number" />
+
+                <span asp-validation-for="IdentityNumber" class="text-danger"></span>
+
+            </div>
+
+            <div class="input-box">
+
+                <label asp-for="PlaceOfBirth" class="control-label"></label>
+
+                <input asp-for="PlaceOfBirth" type="text" placeholder="Enter Place Of Birth" />
+
+                <span asp-validation-for="PlaceOfBirth" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="input-box address">
+
+            <label asp-for="Address" class="control-label"></label>
+
+            <input asp-for="Address" type="text" placeholder="Enter street address" />
+
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+        </div>
+
+        <div class="column">
+
+            <div class="input-box">
+
+                <label asp-for="StartingDate" class="control-label">Starting Date</label>
+
+                <input asp-for="StartingDate" type="date" placeholder="Enter Starting Date" />
+
+                <span asp-validation-for="StartingDate" class="text-danger"></span>
+
+            </div>
+
+            <div class="input-box">
+
+                <label asp-for="Salary" class="control-label"></label>
+
+                <input asp-for="Salary" type="text" placeholder="Enter Salary" />
+
+                <span asp-validation-for="Salary" class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="input-box">
+
+            <div class="column">
+
+                <div class="select-box">
+
+                    <select asp-for="JobId" class="form-control" asp-items="ViewBag.Jobs">
+
+                        <option hidden>Choose Job</option>
+
+                    </select>
+
+                </div>
+
+                <div class="select-box">
+
+                    <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Departments">
+
+                        <option>Choose Department</option>
+
+                    </select>
+
+                </div>
+                
+
+            </div>
+
+            <div class="column">
+
+                <div class="select-box">
+
+                    <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.Companies">
+                        <option hidden>Company Name</option>
+                        
+
+                    </select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <button>Update Employee</button>
+
+    </form>
+
+</section>
